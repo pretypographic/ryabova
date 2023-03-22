@@ -1,3 +1,5 @@
+import './index.css'
+
 import { sence } from "../utils/constants.js";
 import { worksArchive } from "../utils/data.js";
 
