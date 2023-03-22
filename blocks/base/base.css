@@ -1,0 +1,9 @@
+.base {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    --font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

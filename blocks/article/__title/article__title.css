@@ -1,0 +1,6 @@
+.article__title {
+    margin: 0;
+    font-family: var(--font);
+    text-align: center;
+    cursor: pointer;
+}

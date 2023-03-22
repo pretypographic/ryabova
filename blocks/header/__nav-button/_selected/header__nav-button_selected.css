@@ -1,0 +1,8 @@
+.header__nav-button_selected {
+    text-decoration: underline;
+    cursor: default;
+}
+
+.header__nav-button_selected:hover {
+    color: black;
+}
