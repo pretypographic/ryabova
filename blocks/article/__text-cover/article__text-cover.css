@@ -1,0 +1,7 @@
+.article__text-cover {
+    margin: 0;
+    text-align: center;
+    font-family: var(--font);
+    color: greenyellow;
+    transform: scale(1.5);
+}

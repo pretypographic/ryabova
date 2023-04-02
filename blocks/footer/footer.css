@@ -2,5 +2,5 @@
     width: 60%;
     border-top: 1px solid gray;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }

@@ -1,34 +1,45 @@
 class Nav {
-    constructor(nav, stateClass, { deselecter }) {
-        this._nav = nav;
-        this._stateClass = stateClass;
+    constructor(corner, indicator, { deselecter, call }) {
+        this._nav = Array.from(document.querySelector(`.${corner}`).children);
+        this._indicator = indicator;
+        this._indicatorOn = true;
         this._deselecter = deselecter;
+        this._call = call;
     }
 
     _defineSelectedButton () {
-        return this._nav.find((navButton) => {
-            return navButton.classList.contains(this._stateClass);
+        return this._nav.find((tumbler) => {
+            return tumbler.classList.contains(this._indicator);
         });
     }
 
-    _switchSection (navButton) {
-        this._selectedButton = this._defineSelectedButton();
-        this._selectedButton.classList.remove(this._stateClass);
-        navButton.classList.add(this._stateClass);
+    toggleOffIndicator() {
+        if(this._indicatorOn) {
+            this._deselecter();
+            this._selectedButton = this._defineSelectedButton();
+            this._selectedButton.classList.remove(this._indicator);
+            this._indicatorOn = false;
+        }
     }
 
-    _setEventListeners(navButton) {
-        navButton.addEventListener('click', () => {
-            if (!navButton.classList.contains(this._stateClass)) {
-                this._deselecter();
-                this._switchSection(navButton);
+    switchSection (tumbler) {
+        this.toggleOffIndicator();
+        tumbler.classList.add(this._indicator);
+        this._indicatorOn = true;
+    }
+
+    _setEventListeners(tumbler) {
+        tumbler.addEventListener('click', () => {
+            if (!tumbler.classList.contains(this._indicator)) {
+                this._call();
+                this.switchSection(tumbler);
             }
-        }); 
+        });
     }
 
     animateNav() {
-        this._nav.forEach((navButton) => {
-            this._setEventListeners(navButton);
+        this._nav.forEach((tumbler) => {
+            this._setEventListeners(tumbler);
         })
     }
 };

@@ -9,23 +9,66 @@
 <body class="base">
     <header class="header">
         <h1 class="header__title">Nastya Ryabova</h1>
+        <!-- хост -->
         <nav class="header__nav">
-            <button type="button" id="projectsButton" class="header__nav-button header__nav-button_selected">Projects</button>
-            <button type="button" id="textsButton" class="header__nav-button">Texts</button>
-            <button type="button" id="aboutButton" class="header__nav-button">About</button>
+            <button type="button" id="projectsTumbler" class="header__nav-button header__nav-button_selected">Projects</button>
+            <button type="button" id="textsTumbler" class="header__nav-button">Texts</button>
+            <button type="button" id="classroomTumbler" class="header__nav-button">Teaching</button>
+            <button type="button" id="conferencesAuditoriumTumbler" class="header__nav-button">Talks&Conferences</button>
+            <!-- тумблеры -->
         </nav>
+        <!-- схема -->
     </header>
-    <main class="main">
-        <section class="section"></section>
-    </main>
-    <template id="articleTemplate">
-        <article class="article">
-            <img src="" class="article__image">
-            <h3 class="article__title"></h3>
-        </article>
-    </template>
+    <!-- крыша, снаружи -->
+
+    <main class="main"></main>
+    <!-- здание, внутри -->
+
     <footer class="footer">
-        <p class="footer__signature">2023 by Nastya Ryabova</p>
+        <h3 class="footer__signature">thunder and lightning</h3>
     </footer>
+    <!-- инфрастркутура -->
+
+    <div class="popup">
+        <div class="popup__background"></div>
+        <div class="popup__screen">
+            <img class="popup__image">
+            <span class="popup__text"></span>
+        </div>
+    </div>
+    <!-- попап -->
+
+        <template id="hallPath">
+            <section class="section section_hall_prime"></section>
+            <section class="section section_hall_exhibition"></section>
+        </template>
+        <!-- выход в зал -->
+
+        <template id="interior">
+            <article class="article article_type_responsive">
+                <img class="article__image" src="">
+                <!-- глазок -->
+                <h3 class="article__title"></h3>
+                <!-- табличка -->
+            </article>
+        </template>
+        <!-- вход в фойе -->
+    
+        <template id="galleryEntrance">
+            <article class="article article_type_poster">
+                <img  class="article__image" src="">
+                <span class="article__span"></span>
+            </article>
+            <!-- постер -->
+
+            <article class="article article_type_explication">
+                <h2 class="article__title"></h3>
+            </article>
+            <!-- экспликация -->
+
+            <article class="article article_type_exposition"></article>
+            <!-- экспозиция -->
+        </template>
+        <!-- вход в галлерею -->
 </body>
 </html>

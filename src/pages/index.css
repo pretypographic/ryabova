@@ -9,9 +9,20 @@
 
 @import url(../../blocks/main/main.css);
 @import url(../../blocks/section/section.css);
+@import url(../../blocks/section/_hall/section_hall_prime.css);
+@import url(../../blocks/section/_hall/section_hall_exhibition.css);
+
 @import url(../../blocks/article/article.css);
+@import url(../../blocks/article/_type/article_type_responsive.css);
+@import url(../../blocks/article/_type/article_type_poster.css);
+@import url(../../blocks/article/_type/article_type_explication.css);
+@import url(../../blocks/article/_type/article_type_exposition.css);
+@import url(../../blocks/article/__cover/article__cover.css);
 @import url(../../blocks/article/__image/article__image.css);
+@import url(../../blocks/article/__span/article__span.css);
 @import url(../../blocks/article/__title/article__title.css);
+@import url(../../blocks/article/__text/article__text.css);
+@import url(../../blocks/article/__text-cover/article__text-cover.css);
 
 @import url(../../blocks/footer/footer.css);
 @import url(../../blocks/footer/__signature/footer__signature.css);

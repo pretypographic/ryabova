@@ -1,7 +1,10 @@
 .header {
     width: 60%;
     border-bottom: 1px solid gray;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
 }

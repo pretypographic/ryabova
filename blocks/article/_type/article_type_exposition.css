@@ -1,0 +1,8 @@
+.article_type_exposition {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: calc(60vw/4);
+    grid-auto-rows: calc(60vw/4);
+    gap: 1vh;
+}

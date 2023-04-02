@@ -1,6 +1,5 @@
-.article__image {
+.article__cover {
     width: 100%;
     height: 84%;
-    object-fit: cover;
     overflow: hidden;
 }
