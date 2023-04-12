@@ -1,53 +1,97 @@
-import './index.css'
+import './index.css';
 
 import { structure } from '../utils/constants.js';
+// import { worksArchive } from '../utils/data.js';
 
 import { Inside } from '../components/Inside.js';
+import { Hall } from '../components/Hall.js';
+import { Wing } from '../components/Wing.js';
 import { Room } from '../components/Room.js';
-import { Navigation } from '../components/Navigation.js';
+import { Foyer } from '../components/Foyer.js';
+import { ReadingRoom } from '../components/ReadingRoom.js';
 import { Gallery } from '../components/Gallery.js';
 import { Nav } from '../components/Nav.js';
 import { Tumbler } from '../components/Tumbler.js';
+import { Popup } from '../components/Popup.js';
 
 const workshop = new Inside({
     perimeter: structure.inside.perimeter,
-    creator: (room) => {
-        return new Room(room);
+    creator: (hall) => {
+        return new Hall(hall);
     }
 });
 
-const prime = workshop.createStructure({
+const popup = new Popup(structure.infrastructure.services.popup);
+
+const prime = new Hall({
     location: structure.inside.hall.prime.location,
+    interior: structure.inside.hall.prime.interior,
     exit: structure.inside.hall.prime.exit,
-    creator: (room) => {
-        return new Navigation(room, {
+    creator: (item, interior) => {
+        return new Foyer({
+            item: item, 
+            interior: interior, 
             call: (item) => {
                 headerNav.toggleOffIndicator();
-                prime.exitStructure();
+                exit();
                 workshop.enterStructure(exhibition);
-                exhibition.enterStructure2(item);
+                exhibition.enterStructure(item);
             }
         });
     }
 });
 
-const exhibition = workshop.createStructure({
+const library = new Hall({
+    location: structure.inside.hall.library.location,
+    interior: structure.inside.hall.library.interior,
+    exit: structure.inside.hall.library.exit,
+    creator: (item, interior) => {
+        return new ReadingRoom({
+            item: item, 
+            interior: interior,
+            call: (item) => {
+                headerNav.toggleOffIndicator();
+                exit();
+                workshop.enterStructure(exhibition);
+                exhibition.enterStructure(item);
+            }
+        });
+    }
+});
+
+const exhibition = new Wing({
     location: structure.inside.hall.exhibition.wing,
     exit: structure.inside.hall.exhibition.exit,
     creator: (item) => {
-        return new Gallery(item);
+        return new Gallery(item, popup);
+    }
+});
+
+const office = new Room({
+    location: structure.outside.hostOffice.corner,
+    exit: structure.outside.hostOffice.passage
+});
+
+const officeTumbler = new Tumbler(structure.outside.hostOffice.interface, {
+    imposer: () => {
+        headerNav.toggleOffIndicator();
+        exit();
+        workshop.enterStructure(office);
+        officeTumbler.isSelected = true;
     }
 });
 
 const exhibitionTumbler = new Tumbler(structure.outside.scheme.interface.exhibitionHallTumbler, {
     imposer: () => {
+        workshop.enterStructure(prime);
         prime.enterStructure(structure.inside.room.foyer);
     }
 });
 
 const libraryTumbler = new Tumbler(structure.outside.scheme.interface.libraryTumbler, {
     imposer: () => {
-        prime.enterStructure(structure.inside.room.lobby);
+        workshop.enterStructure(library);
+        library.enterStructure(structure.inside.room.lobby);
     }
 });
 
@@ -71,17 +115,25 @@ const headerNav = new Nav(structure.outside.scheme.corner, structure.outside.sch
         conferencesAuditoriumTumbler.isSelected = false;
     },
     call: () => {
-        prime.exitStructure();
-        exhibition.exitStructure();
-        workshop.enterStructure(prime);
+        officeTumbler.isSelected = false;
+        exit();
     }
 });
 
+const exit = () => {
+    prime.exitStructure();
+    library.exitStructure();
+    exhibition.exitStructure();
+    office.exitStructure();
+}
+
 headerNav.animateNav();
+officeTumbler.setEventListener();
 exhibitionTumbler.setEventListener();
 libraryTumbler.setEventListener();
 classroomTumbler.setEventListener();
 conferencesAuditoriumTumbler.setEventListener();
+popup.setEventListeners();
 
 exhibitionTumbler.isSelected = true;
 workshop.enterStructure(prime);

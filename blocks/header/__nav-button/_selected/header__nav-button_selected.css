@@ -4,5 +4,5 @@
 }
 
 .header__nav-button_selected:hover {
-    color: black;
+    color: var(--text);
 }

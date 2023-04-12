@@ -1,9 +1,11 @@
 .header__nav-button {
     background-color: transparent;
     border: none;
+    text-transform: lowercase;
+    font-size: 1.2rem;
     font-family: var(--font);
-    font-size: 1.5em;
-    font-weight: bold;
+    font-weight: lighter;
+    color: var(--text);
     cursor: pointer;
 }
 

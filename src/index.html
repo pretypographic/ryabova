@@ -8,7 +8,7 @@
 </head>
 <body class="base">
     <header class="header">
-        <h1 class="header__title">Nastya Ryabova</h1>
+        <button type="button" id="officeTumbler" class="header__title" >Nastya Ryabova</button>
         <!-- хост -->
         <nav class="header__nav">
             <button type="button" id="projectsTumbler" class="header__nav-button header__nav-button_selected">Projects</button>
@@ -24,51 +24,137 @@
     <main class="main"></main>
     <!-- здание, внутри -->
 
-    <footer class="footer">
-        <h3 class="footer__signature">thunder and lightning</h3>
-    </footer>
-    <!-- инфрастркутура -->
-
     <div class="popup">
-        <div class="popup__background"></div>
-        <div class="popup__screen">
-            <img class="popup__image">
+        <article class="popup__screen">
+            <img class="popup__image" src="">
             <span class="popup__text"></span>
-        </div>
+        </article>
+        <div class="close-button"></div>
     </div>
     <!-- попап -->
 
         <template id="hallPath">
             <section class="section section_hall_prime"></section>
+            <section class="section section_hall_library"></section>
             <section class="section section_hall_exhibition"></section>
         </template>
         <!-- выход в зал -->
 
-        <template id="interior">
+        <template id="primeInterior">
             <article class="article article_type_responsive">
                 <img class="article__image" src="">
                 <!-- глазок -->
-                <h3 class="article__title"></h3>
-                <!-- табличка -->
+                <div class="article__plug">
+                    <h3 class="article__title"></h3>
+                    <!-- табличка -->
+                </div>
             </article>
         </template>
         <!-- вход в фойе -->
-    
-        <template id="galleryEntrance">
-            <article class="article article_type_poster">
-                <img  class="article__image" src="">
-                <span class="article__span"></span>
-            </article>
-            <!-- постер -->
 
-            <article class="article article_type_explication">
+        <template id="libraryInterior">
+            <article class="article article_type_responsive">
+                <h3 class="article__title"></h3>
+                <div class="article__plug"></div>
+            </article>
+        </template>
+        <!-- вход в читательский зал -->
+
+        <template id="officeEntrance">
+            <div class="office">
+                <article class="article article_type_explication">
+                    <p class="office__text">CV&nbsp;<a class="link" href="#" download>download</a></p>
+                    <div class="office__contacts">
+                        <ul class="office__list">
+                            <li class="office__text"><a class="link" href="#">facebook</a></li>
+                            <li class="office__text"><a class="link" href="#">instagram</a></li>
+                            <li class="office__text"><a class="link" href="#">meruenator@gmail.com</a></li>
+                            <li class="office__text">+0 (000) 000-00-00</li>
+                        </ul>
+                    </div>
+                    <p class="article__text">Anastasia Ryabova is&nbsp;an&nbsp;artist, 
+                        educator, researcher. 
+                        She is&nbsp;an&nbsp;initiator of&nbsp;exhibition, publishing 
+                        and educational projects, author of&nbsp;critical essays 
+                        on&nbsp;contemporary art and architecture.</p>
+                    <p class="article__text">Builder of&nbsp;unplanned Star Road 
+                        (2013&nbsp;&mdash; ). 
+                        Initiator and editor of&nbsp;the brochure about city and 
+                        political math Problem Book (2013). Author and keeper 
+                        of&nbsp;the Artists&rsquo; Private Collections archive 
+                        (2010&nbsp;&mdash; ). Curator of&nbsp;the exhibition False 
+                        Calculations Presidium (2012). One of&nbsp;the creators 
+                        of&nbsp;e-shop megazine.biz (2009). One of&nbsp;the founders 
+                        of&nbsp;the Night Movement (2015 -). Participant of&nbsp;the 
+                        exhibition action &gt;10 (2013). Сo-author of&nbsp;art-manual 
+                        Introduction into profession-XXI century (2017). Сo-author 
+                        of&nbsp;brochure based on&nbsp;co-called course &laquo;Politics 
+                        of&nbsp;Drawing&raquo; (2019).</p>
+                    <p class="article__text article__text_style_italic">@I&nbsp;am 
+                        interested in&nbsp;the invisible structures ruling 
+                        human behavior, such as&nbsp;laws, moral attitudes, economic 
+                        and social hierarchies, cultural codes and other conventions. 
+                        I&nbsp;make simple drawings and numerous actions.@</p>
+                </article>
+                <article class="article article_type_header">
+                    <h2 class="article__title">TEACHING EXPERIENCE:</h2>
+                </article>
+                <article class="article article_type_explication">
+                    <p class="article__text">Seminar Leader at the art-school Institute BAZA. Course “The Big Question”. (2021-2022)</p>
+                    <p class="article__text">Seminar Leader at the School of engaget art St. Petersburg . Cours “Aesthetic Kinship”. With Katerina Beloglazova, Maria Bikbulatova, Vita Zelenskaya and Maria Maraeva. St. Petersburg (2020)</p>
+                    <p class="article__text">Seminar Leader at the Rodchenko School of Multimedia art and Photography. Course “Politics of Drawing”. With artist and theorist Nikolay Smirnov (2019)</p>
+                    <p class="article__text">Professor at the Express-Academy of Marinus Boezem (2018)</p>
+                    <p class="article__text">Series of seminars dedicated to genres in art in the Art-ovrag Festival, Vyksa (2018)</p>
+                    <p class="article__text">Seminar Leader at the Rodchenko School of Multimedia art and Photography. Course “Real Folly”. With art-historian Gleb Napreenko (2018)</p>
+                    <p class="article__text">Series of work-shops at the Moscow Architectural School MARCH (2017)</p>
+                    <p class="article__text">Seminar Leader at the art-school Institute BAZA. Course “12 Tasks”. With art-historian Gleb Napreenko. (2017)</p>
+                    <p class="article__text">Night Movement: Curator, lecturer of the series of lecturers Movement Long as the Darkest Night. Exhibition Laboratory, Helsinki, (2016)</p>
+                    <p class="article__text">Seminar Leader at the Helsinki Academy of Fine Arts. Intensive course “Very well-being”. (within the Resident Fellow funded by the Saastamoinen Foundation). (2016)</p>
+                    <p class="article__text">Seminar Leader at The Rodchenko School of Multimedia art and Photography. Course “Introduction into Profession-XXI Century”. The seminar was intended to study contemporary artists’ position in regard of precarious labour, immaterial production and institutional situation. We built the course and taught together with art historian Alexandra Novozhonova(2015 –  2016). At the end we published co-named art-manual (2017)</p>
+                    <p class="article__text">Curator of professional guidance program for future architects at CCI Perspectiva, During the second year it was called How I Betrayed a Profession (2016)</p>
+                    <p class="article__text">Seminar Leader at the Kiev Academy  of Media Art Kiev with a course named Artistic Inconvenience in the Contemporary World (2015)</p>
+                    <p class="article__text">Curator of professional guidance program for future architects at the CCI Perspectiva, Moscow. During the first year it was called Falling out Teeth or a House of a Size of Million Centuries (2014)</p>
+                    <p class="article__text">Invited tutor The LitPro Summer School based on EHU Vilnius (former Belarusan institute) (2014)</p>
+                </article>
+            </div>
+        </template>
+        <!-- входв в офис -->
+
+        <template id="galleryEntrance">
+            <article class="article article_type_header">
                 <h2 class="article__title"></h3>
             </article>
+            <!-- название -->
+
+            <article class="article article_type_explication"></article>
             <!-- экспликация -->
 
             <article class="article article_type_exposition"></article>
             <!-- экспозиция -->
         </template>
         <!-- вход в галлерею -->
+
+        <template id="teachingEntrance">
+            <article class="article article_type_header">
+                <h2 class="article__title">TEACHING EXPERIENCE:</h2>
+            </article>
+            <article class="article article_type_explication">
+                <p class="article__text">Seminar Leader at the art-school Institute BAZA. Course “The Big Question”. (2021-2022)</p>
+                <p class="article__text">Seminar Leader at the School of engaget art St. Petersburg . Cours “Aesthetic Kinship”. With Katerina Beloglazova, Maria Bikbulatova, Vita Zelenskaya and Maria Maraeva. St. Petersburg (2020)</p>
+                <p class="article__text">Seminar Leader at the Rodchenko School of Multimedia art and Photography. Course “Politics of Drawing”. With artist and theorist Nikolay Smirnov (2019)</p>
+                <p class="article__text">Professor at the Express-Academy of Marinus Boezem (2018)</p>
+                <p class="article__text">Series of seminars dedicated to genres in art in the Art-ovrag Festival, Vyksa (2018)</p>
+                <p class="article__text">Seminar Leader at the Rodchenko School of Multimedia art and Photography. Course “Real Folly”. With art-historian Gleb Napreenko (2018)</p>
+                <p class="article__text">Series of work-shops at the Moscow Architectural School MARCH (2017)</p>
+                <p class="article__text">Seminar Leader at the art-school Institute BAZA. Course “12 Tasks”. With art-historian Gleb Napreenko. (2017)</p>
+                <p class="article__text">Night Movement: Curator, lecturer of the series of lecturers Movement Long as the Darkest Night. Exhibition Laboratory, Helsinki, (2016)</p>
+                <p class="article__text">Seminar Leader at the Helsinki Academy of Fine Arts. Intensive course “Very well-being”. (within the Resident Fellow funded by the Saastamoinen Foundation). (2016)</p>
+                <p class="article__text">Seminar Leader at The Rodchenko School of Multimedia art and Photography. Course “Introduction into Profession-XXI Century”. The seminar was intended to study contemporary artists’ position in regard of precarious labour, immaterial production and institutional situation. We built the course and taught together with art historian Alexandra Novozhonova(2015 –  2016). At the end we published co-named art-manual (2017)</p>
+                <p class="article__text">Curator of professional guidance program for future architects at CCI Perspectiva, During the second year it was called How I Betrayed a Profession (2016)</p>
+                <p class="article__text">Seminar Leader at the Kiev Academy  of Media Art Kiev with a course named Artistic Inconvenience in the Contemporary World (2015)</p>
+                <p class="article__text">Curator of professional guidance program for future architects at the CCI Perspectiva, Moscow. During the first year it was called Falling out Teeth or a House of a Size of Million Centuries (2014)</p>
+                <p class="article__text">Invited tutor The LitPro Summer School based on EHU Vilnius (former Belarusan institute) (2014)</p>
+            </article>
+        </template>
 </body>
 </html>

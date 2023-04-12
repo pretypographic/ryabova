@@ -2,6 +2,18 @@
     cursor: pointer;
 }
 
-.article_type_responsive:hover .article__title {
-    color: gray;
+.article_type_responsive:hover .article__plug {
+    opacity: 1;
 }
+
+.article_type_responsive:hover .article__title {
+    color: var(--fon2);
+}
+
+/* .article_type_responsive:nth-of-type(2n) .article__plug {
+    background: rgb(224, 183, 0);
+}
+
+.article_type_responsive:nth-of-type(3n) .article__plug {
+    background: rgb(0, 141, 19);
+} */

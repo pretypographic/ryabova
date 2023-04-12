@@ -1,3 +1,8 @@
 .article__text {
+    margin: 0;
+    margin-bottom: 1vh;
+    width: calc((100% - 1vh) / 2);
+    font-size: 0.9rem;
     font-family: var(--font);
+    font-weight: lighter;
 }

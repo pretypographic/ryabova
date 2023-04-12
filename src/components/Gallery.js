@@ -1,16 +1,17 @@
 import { Interior } from "./Interior.js";
 
 class Gallery extends Interior {
-    constructor(item) {
+    constructor(item, popup) {
         super(item);
+        this._popup = popup;
         this._layout = '#galleryEntrance'
-        this._poster = '.article_type_poster';
+        this._header = '.article_type_header';
         this._explication = '.article_type_explication';
         this._exposition = '.article_type_exposition';
     }
 
-    _beginPoster() {
-        return document.querySelector(this._layout).content.querySelector(this._poster).cloneNode(true);
+    _beginHeader() {
+        return document.querySelector(this._layout).content.querySelector(this._header).cloneNode(true);
     }
 
     _beginExplication() {
@@ -21,17 +22,12 @@ class Gallery extends Interior {
         return document.querySelector(this._layout).content.querySelector(this._exposition).cloneNode(true);
     }
 
-    _createGalleryPoster() {
-        this._galleryPosterCover = this._galleryPoster.querySelector('.article__image');
-        this._galleryPosterCover.setAttribute('src', this._cover);
-        this._galleryPosterCover.setAttribute('alt', `Cover: ${this._title}.`);
-        this._galleryPosterTitle = this._galleryPoster.querySelector('.article__span');
-        this._galleryPosterTitle.textContent = this._title;
+    _createGalleryHeader() {
+        this._galleryHeaderTitle = this._galleryHeader.querySelector('.article__title');
+        this._galleryHeaderTitle.textContent = this._title;
     }
 
     _createGalleryExplication() {
-        this._galleryExplicationTitle = this._galleryExplication.querySelector('.article__title');
-        this._galleryExplicationTitle.textContent = this._title;
         this._text.forEach((string) => {
             const paragraph = document.createElement('p');
             paragraph.classList.add('article__text');
@@ -45,15 +41,18 @@ class Gallery extends Interior {
             const frame = document.createElement('img');
             frame.classList.add('article__image');
             frame.setAttribute('src', image);
+            frame.addEventListener('click', () => {
+                this._popup.openPopup(image);
+            });
             // frame.setAttribute('alt', `Image: ${this._title}.`);
             this._galleryExposition.append(frame);
         })
     }
 
-    _addGalleryPoster() {
-        this._galleryPoster = this._beginPoster();
-        this._createGalleryPoster();
-        return this._galleryPoster;
+    _addGalleryHeader() {
+        this._galleryHeader = this._beginHeader();
+        this._createGalleryHeader();
+        return this._galleryHeader;
     }
 
     _addGalleryExplication() {
@@ -70,8 +69,8 @@ class Gallery extends Interior {
 
     _addInterior() {
         this._gallery = document.createElement('div');
-        if(this._poster) {
-            this._gallery.append(this._addGalleryPoster());
+        if(this._header) {
+            this._gallery.append(this._addGalleryHeader());
         }
         if(this._explication) {
             this._gallery.append(this._addGalleryExplication());

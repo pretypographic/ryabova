@@ -22,7 +22,7 @@ class Nav {
         }
     }
 
-    switchSection (tumbler) {
+    _switchSection(tumbler) {
         this.toggleOffIndicator();
         tumbler.classList.add(this._indicator);
         this._indicatorOn = true;
@@ -32,7 +32,7 @@ class Nav {
         tumbler.addEventListener('click', () => {
             if (!tumbler.classList.contains(this._indicator)) {
                 this._call();
-                this.switchSection(tumbler);
+                this._switchSection(tumbler);
             }
         });
     }

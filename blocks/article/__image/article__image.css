@@ -1,6 +1,7 @@
 .article__image {
     width: 100%;
-    height: 84%;
+    height: 100%;
     object-fit: cover;
     overflow: hidden;
+    cursor: pointer;
 }

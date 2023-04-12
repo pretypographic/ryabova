@@ -1,32 +1,34 @@
-// class Room {
-//     constructor({ location, exit, creator }) {
-//         this._location = location;
-//         this._exit = exit;
-//         this._creator = creator;
-//     }
-//     _addRoom() {
-//         return document.querySelector(this._exit).content.querySelector(`.${this._location}`).cloneNode(true);
-//     }
+class Hall {
+    constructor({ location, interior, exit, creator }) {
+        this._location = location;
+        this._interior = interior;
+        this._exit = exit;
+        this._creator = creator;
+        this._doorOpened = false;
+    }
+    _addHall() {
+        return document.querySelector(this._exit).content.querySelector(`.${this._location}`).cloneNode(true);
+    }
 
-//     createStructure() {
-//         this._room = this._addRoom();
-//         return this._room;
-//     }
+    createStructure() {
+        this._hall = this._addHall();
+        this._doorOpened = true;
+        return this._hall;
+    }
 
-//     enterStructure(interior) {
-//         interior.forEach((object) => {
-//             this._object = this._creator(object);
-//             this._room.append(this._object.createObject());
-//         });
-//     }
+    enterStructure(room) {
+        room.forEach((item) => {
+            this._item = this._creator(item, this._interior);
+            this._hall.append(this._item.createInterior());
+        });
+    }
 
-//     passRoom() {
-//         this._room.innerHTML = '';
-//     }
+    exitStructure() {
+        if (this._doorOpened) {
+            this._hall.remove();
+            this._doorOpened = false;
+        }
+    }
+};
 
-//     exitStructure() {
-//         this._room.remove();
-//     }
-// };
-
-// export { Room }
+export { Hall }

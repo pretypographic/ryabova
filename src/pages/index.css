@@ -10,11 +10,12 @@
 @import url(../../blocks/main/main.css);
 @import url(../../blocks/section/section.css);
 @import url(../../blocks/section/_hall/section_hall_prime.css);
+@import url(../../blocks/section/_hall/section_hall_library.css);
 @import url(../../blocks/section/_hall/section_hall_exhibition.css);
 
 @import url(../../blocks/article/article.css);
 @import url(../../blocks/article/_type/article_type_responsive.css);
-@import url(../../blocks/article/_type/article_type_poster.css);
+@import url(../../blocks/article/_type/article_type_header.css);
 @import url(../../blocks/article/_type/article_type_explication.css);
 @import url(../../blocks/article/_type/article_type_exposition.css);
 @import url(../../blocks/article/__cover/article__cover.css);
@@ -22,7 +23,21 @@
 @import url(../../blocks/article/__span/article__span.css);
 @import url(../../blocks/article/__title/article__title.css);
 @import url(../../blocks/article/__text/article__text.css);
+@import url(../../blocks/article/__text/_style/article__text_style_italic.css);
 @import url(../../blocks/article/__text-cover/article__text-cover.css);
+@import url(../../blocks/article/__plug/article__plug.css);
+
+@import url(../../blocks/office/__text/office__text.css);
+@import url(../../blocks/office/__contacts/office__contacts.css);
+@import url(../../blocks/office/__list/office__list.css);
+
+@import url(../../blocks/popup/popup.css);
+@import url(../../blocks/popup/_opened/popup_opened.css);
+@import url(../../blocks/popup/__screen/popup__screen.css);
+@import url(../../blocks/popup/__image/popup__image.css);
 
 @import url(../../blocks/footer/footer.css);
 @import url(../../blocks/footer/__signature/footer__signature.css);
+@import url(../../blocks/close-button/close-button.css);
+@import url(../../blocks/link/link.css);
+@import url(../../blocks/test/test.css);
